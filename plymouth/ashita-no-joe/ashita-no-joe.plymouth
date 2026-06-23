@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Ashita no Joe
+Description=Boot theme custom Ashita no Joe
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/ashita-no-joe
+ScriptFile=/usr/share/plymouth/themes/ashita-no-joe/ashita.script

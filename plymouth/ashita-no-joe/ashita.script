@@ -1,0 +1,59 @@
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+
+bg = Image("background.png");
+bg_sprite = Sprite(bg);
+
+bg_sprite.SetX(0);
+bg_sprite.SetY(0);
+
+// =====================
+// Barra de progreso
+// =====================
+
+progress_box.image = Image("progress_box.png");
+progress_box.sprite = Sprite(progress_box.image);
+
+progress_box.x = 220;
+progress_box.y = 620;
+
+progress_box.sprite.SetPosition(
+    progress_box.x,
+    progress_box.y,
+    100
+);
+
+progress_bar.original_image = Image("progress_bar.png");
+progress_bar.image = progress_bar.original_image;
+
+progress_bar.sprite = Sprite(progress_bar.image);
+
+progress_bar.sprite.SetPosition(
+    progress_box.x,
+    progress_box.y,
+    101
+);
+
+fun progress_callback(duration, progress)
+{
+    width = Math.Int(
+        progress_bar.original_image.GetWidth() * progress
+    );
+
+    if (width < 1)
+        width = 1;
+
+    progress_bar.image =
+        progress_bar.original_image.Scale(
+            width,
+            progress_bar.original_image.GetHeight()
+        );
+
+    progress_bar.sprite.SetImage(
+        progress_bar.image
+    );
+}
+
+Plymouth.SetBootProgressFunction(
+    progress_callback
+);
