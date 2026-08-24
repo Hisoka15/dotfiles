@@ -1,5 +1,3 @@
-#!/bin/bash
-
 sudo pacman -S --needed \
     hyprland \
     waybar \
@@ -20,8 +18,16 @@ sudo pacman -S --needed \
     pipewire-pulse \
     wireplumber \
     noto-fonts \
+    noto-fonts-cjk \
     noto-fonts-emoji \
     ttf-jetbrains-mono-nerd \
     grim \
     slurp \
-    wl-clipboard
+    wl-clipboard \
+    jq \
+    playerctl \
+    brightnessctl \
+    hyprlock \
+    hyprshot \
+    swaync \
+    swww

@@ -9,7 +9,8 @@ mkdir -p ~/.config
 cp -r .config/* ~/.config/
 
 if [ -d walls ]; then
-    cp -r walls ~/
+    mkdir -p ~/Pictures
+    cp -r walls ~/Pictures/
 fi
 
 echo "Dotfiles instalados correctamente."

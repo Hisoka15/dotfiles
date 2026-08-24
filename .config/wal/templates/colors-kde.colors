@@ -1,0 +1,17 @@
+[General]
+Name=Pywal
+ColorProfile=X11
+
+[Background]
+Normal={color0}
+
+[Foreground]
+Normal={color7}
+
+[Color:Window]
+BackgroundNormal={color0}
+ForegroundNormal={color7}
+
+[Color:Button]
+BackgroundNormal={color1}
+ForegroundNormal={color7}

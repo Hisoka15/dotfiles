@@ -1,4 +1,3 @@
-/* Hubungkan langsung ke hasil generate warna Pywal */
 @import "/home/horacio/.cache/wal/colors-waybar.css";
 
 * {
@@ -17,13 +16,13 @@ window#waybar {
 }
 
 tooltip {
-    background: @background; /* Berubah jadi @background bawaan pywal */
-    border: 1px solid @color0; /* Berubah jadi @color0 bawaan pywal */
+    background: @background;
+    border: 1px solid @color0;
     border-radius: 12px;
 }
 
 tooltip label {
-    color: @foreground; /* Berubah jadi @foreground bawaan pywal */
+    color: @foreground;
     padding: 6px;
 }
 
@@ -32,7 +31,7 @@ tooltip label {
     padding: 5px 3px;
     margin: 0 0 0 12px;
     border-radius: 18px;
-    border: 1px solid @color8; /* Berubah jadi @color8 bawaan pywal */
+    border: 1px solid @color8;
     color: @foreground;
 }
 
@@ -45,13 +44,16 @@ tooltip label {
 }
 
 #workspaces button.active {
-    background-color: @color7; /* Berubah jadi @color7 bawaan pywal */
+    background-color: @color7;
     color: @color7;
     min-width: 35px;
     font-size: 13px;
 }
 
-/* Grup utama modul kanan */
+/* =========================================
+   MÓDULOS DERECHA
+   ========================================= */
+
 #battery,
 #pulseaudio,
 #network,
@@ -60,49 +62,37 @@ tooltip label {
 #custom-swaync {
     background-color: @background;
     color: @color7;
-    padding: 0 15px 0 15px;
-    margin-right: 12px;
+    padding: 0 10px;
+    margin-right: 5px;
     border-radius: 50px;
     border: 1px solid @color8;
 }
 
-/* Kustomisasi Khusam Modul Sholat (GTK CSS Compliant) */
-#custom-prayer {
-    background-color: @background;
-    color: @color7;
-    border-radius: 50px;
-    border: 1px solid @color8;
-    
-    /* Padding kanan-kiri disamakan (15px), atas-bawah dilebarkan sedikit */
-    padding: 3px 15px; 
-    
-    /* Jarak aman dari #workspaces di sebelahnya */
-    margin-left: 12px;
-    margin-right: 12px;
-    
-    /* Solusi pengganti line-height: Paksa tinggi minimal kapsulnya */
-    min-height: 24px; 
-}
+/* =========================================
+   CPU / RAM / TEMPERATURA
+   ========================================= */
 
-#clock {
-    color: @color7;
-}
 #cpu,
 #memory,
 #temperature {
     background-color: @background;
     color: @color7;
-    padding: 0 15px;
-    margin-right: 12px;
+    padding: 0 10px;
+    margin-right: 5px;
     border-radius: 50px;
     border: 1px solid @color8;
 }
+
 #cpu:hover,
 #memory:hover,
 #temperature:hover {
     background-color: @color7;
     color: @background;
 }
+
+/* =========================================
+   CLOCK / WEATHER
+   ========================================= */
 
 #custom-clock-weather {
     background-color: @background;
@@ -112,11 +102,34 @@ tooltip label {
     border-radius: 50px;
     border: 1px solid @color8;
 }
+
 #custom-clock-weather:hover {
     background-color: @color7;
     color: @background;
 }
-#pulseaudio:hover{
+
+/* =========================================
+   BATTERY
+   ========================================= */
+
+#battery.charging,
+#battery.full {
+    color: #8be9a8;
+}
+
+#battery.warning {
+    color: #f1fa8c;
+}
+
+#battery.critical {
+    color: #ff5555;
+}
+
+/* =========================================
+   HOVERS
+   ========================================= */
+
+#pulseaudio:hover {
     background-color: @color7;
     color: @background;
 }
@@ -131,11 +144,10 @@ tooltip label {
     color: @background;
 }
 
+/* =========================================
+   TRAY
+   ========================================= */
+
 #tray {
     color: @foreground;
-}
-
-#custom-prayer:hover {
-    background-color: @color7;
-    color: @background;
 }

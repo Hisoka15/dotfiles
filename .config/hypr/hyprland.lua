@@ -1,0 +1,12 @@
+require("lua.programs")
+
+require("lua.monitors")
+require("lua.environment")
+require("lua.general")
+require("lua.decoration")
+require("lua.animations")
+require("lua.input")
+require("lua.autostart")
+require("lua.misc")
+require("lua.keybinds")
+require("lua.windowrules")
