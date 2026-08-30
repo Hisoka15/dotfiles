@@ -2,17 +2,19 @@
 
 set -e
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 echo "==> Actualizando sistema"
 sudo pacman -Syu --noconfirm
 
 echo "==> Instalando paquetes base"
-./packages.sh
+"$SCRIPT_DIR/packages.sh"
 
 echo "==> Configurando Plymouth"
-./plymouth/setup-plymouth.sh
+"$SCRIPT_DIR/plymouth/setup-plymouth.sh"
 
 echo "==> Instalando dotfiles"
-./install.sh
+"$SCRIPT_DIR/install.sh"
 
 echo "================================="
 echo "Setup completo terminado"
