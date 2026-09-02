@@ -150,19 +150,18 @@ Los atajos están definidos en:
 
 ### Lanzadores y utilidades
 
-| Atajo               | Acción                                      |
-| ------------------- | ------------------------------------------- |
-| `Print`             | Captura de pantalla con selección de área   |
-| `SUPER + SPACE`     | Abrir Rofi                                  |
-| `SUPER + SHIFT + S` | Captura de región con Hyprshot              |
-| `SUPER + SHIFT + W` | Ejecutar script de lanzamiento              |
-| `SUPER + A`         | Alternar centro de notificaciones           |
-| `SUPER + N`         | Alternar centro de notificaciones           |
-| `SUPER + W`         | Cambiar wallpaper                           |
-| `CTRL + M`          | Abrir menú de energía                       |
-| `ALT + Tab`         | Cambiar entre ventanas                      |
-| `ALT + V`           | Ejecutar Infinite Desktop                   |
-| `SUPER + SHIFT + V` | Alternar ventanas flotantes mediante script |
+| Atajo               | Acción                                    |
+| ------------------- | ----------------------------------------- |
+| `Print`             | Captura de pantalla con selección de área |
+| `SUPER + SPACE`     | Abrir Rofi                                |
+| `SUPER + SHIFT + S` | Captura de región con Hyprshot            |
+| `SUPER + SHIFT + W` | Ejecutar script de lanzamiento            |
+| `SUPER + A`         | Alternar centro de notificaciones         |
+| `SUPER + N`         | Alternar centro de notificaciones         |
+| `SUPER + W`         | Cambiar wallpaper                         |
+| `CTRL + M`          | Abrir menú de energía                     |
+| `ALT + Tab`         | Cambiar entre ventanas                    |
+| `ALT + V`           | Ejecutar Infinite Desktop                 |
 
 ### Gestión de ventanas
 
@@ -209,21 +208,21 @@ hyprctl switchxkblayout all next
 
 ### Volumen
 
-| Tecla                  | Acción                                    |
-| ---------------------- | ----------------------------------------- |
-| `XF86AudioRaiseVolume` | Aumentar volumen                          |
-| `XF86AudioLowerVolume` | Reducir volumen                           |
-| `XF86AudioMute`        | Activar/desactivar silencio               |
-| `XF86AudioMicMute`     | Activar/desactivar silencio del micrófono |
+| Tecla           | Acción                                    |
+| --------------- | ----------------------------------------- |
+| `Fn + ↑`        | Aumentar volumen                          |
+| `Fn + ↓`        | Reducir volumen                           |
+| `Fn + Mute`     | Activar/desactivar silencio               |
+| `Fn + Mic Mute` | Activar/desactivar silencio del micrófono |
 
 El control de volumen utiliza `wpctl`.
 
 ### Brillo
 
-| Tecla                   | Acción          |
-| ----------------------- | --------------- |
-| `XF86MonBrightnessDown` | Reducir brillo  |
-| `XF86MonBrightnessUp`   | Aumentar brillo |
+| Tecla    | Acción          |
+| -------- | --------------- |
+| `Fn + ←` | Reducir brillo  |
+| `Fn + →` | Aumentar brillo |
 
 El control de brillo utiliza `brightnessctl`.
 
@@ -238,14 +237,22 @@ La disponibilidad depende del teclado y del hardware.
 
 ### Multimedia
 
-| Tecla            | Acción              |
-| ---------------- | ------------------- |
-| `XF86AudioNext`  | Siguiente canción   |
-| `XF86AudioPrev`  | Canción anterior    |
-| `XF86AudioPlay`  | Reproducir / pausar |
-| `XF86AudioPause` | Reproducir / pausar |
+| Tecla             | Acción              |
+| ----------------- | ------------------- |
+| `Fn + Next`       | Siguiente canción   |
+| `Fn + Previous`   | Canción anterior    |
+| `Fn + Play/Pause` | Reproducir / pausar |
+| `Fn + Pause`      | Reproducir / pausar |
 
 Los controles multimedia utilizan `playerctl`.
+
+`Fn + Next` corresponde a la tecla física de **siguiente pista**, normalmente identificada con el símbolo `⏭`.
+
+`Fn + Previous` corresponde a la tecla física de **pista anterior**, normalmente identificada con el símbolo `⏮`.
+
+`Fn + Play/Pause` corresponde a la tecla física de **reproducir/pausar**, normalmente identificada con el símbolo `▶⏸`.
+
+`Fn + Pause` corresponde a la tecla física de **pausa**, cuando el teclado dispone de una tecla independiente para esta función.
 
 ### Splunk
 
@@ -430,7 +437,7 @@ git clone https://github.com/Hisoka15/dotfiles.git
 cd dotfiles
 ```
 
-### 2. Give execution permissions to the scripts
+### 2. Give permissions to the scripts
 
 ```bash
 chmod -R +x .
@@ -444,7 +451,7 @@ Run the main script:
 ./bootstrap.sh
 ```
 
-`bootstrap.sh` is the main entry point. It runs the required scripts in the correct order:
+`bootstrap.sh` is the main entry point and runs the required scripts in the correct order:
 
 1. Update the system.
 2. Install the base packages using `packages.sh`.
@@ -477,7 +484,7 @@ The setup installs and configures:
 
 ## ⚙️ Modular Installation
 
-If you prefer to install each component separately:
+If you prefer to install each component manually:
 
 ### Base packages
 
@@ -491,7 +498,7 @@ If you prefer to install each component separately:
 ./install.sh
 ```
 
-The configuration files will be copied to:
+The configurations will be copied to:
 
 ```text
 ~/.config/
@@ -531,7 +538,7 @@ The `setup-plymouth.sh` script:
 4. Configures the Plymouth hook in `mkinitcpio`.
 5. Disables the default Arch splash included in the kernel preset.
 6. Configures `quiet`, `splash`, and `loglevel=3`.
-7. Rebuilds the initramfs.
+7. Regenerates the initramfs.
 
 The default Arch splash is disabled to prevent the Arch logo from appearing before the custom theme.
 
@@ -565,19 +572,18 @@ The shortcuts are defined in:
 
 ### Launchers and Utilities
 
-| Shortcut            | Action                                   |
-| ------------------- | ---------------------------------------- |
-| `Print`             | Take a selected-area screenshot          |
-| `SUPER + SPACE`     | Open Rofi                                |
-| `SUPER + SHIFT + S` | Take a region screenshot with Hyprshot   |
-| `SUPER + SHIFT + W` | Run launcher script                      |
-| `SUPER + A`         | Toggle notification center               |
-| `SUPER + N`         | Toggle notification center               |
-| `SUPER + W`         | Change wallpaper                         |
-| `CTRL + M`          | Open power menu                          |
-| `ALT + Tab`         | Switch between windows                   |
-| `ALT + V`           | Run Infinite Desktop                     |
-| `SUPER + SHIFT + V` | Toggle floating windows using the script |
+| Shortcut            | Action                                 |
+| ------------------- | -------------------------------------- |
+| `Print`             | Take a selected-area screenshot        |
+| `SUPER + SPACE`     | Open Rofi                              |
+| `SUPER + SHIFT + S` | Take a region screenshot with Hyprshot |
+| `SUPER + SHIFT + W` | Run launcher script                    |
+| `SUPER + A`         | Toggle notification center             |
+| `SUPER + N`         | Toggle notification center             |
+| `SUPER + W`         | Change wallpaper                       |
+| `CTRL + M`          | Open power menu                        |
+| `ALT + Tab`         | Switch between windows                 |
+| `ALT + V`           | Run Infinite Desktop                   |
 
 ### Window Management
 
@@ -624,43 +630,51 @@ hyprctl switchxkblayout all next
 
 ### Volume
 
-| Key                    | Action                 |
-| ---------------------- | ---------------------- |
-| `XF86AudioRaiseVolume` | Increase volume        |
-| `XF86AudioLowerVolume` | Decrease volume        |
-| `XF86AudioMute`        | Toggle audio mute      |
-| `XF86AudioMicMute`     | Toggle microphone mute |
+| Key             | Action                 |
+| --------------- | ---------------------- |
+| `Fn + ↑`        | Increase volume        |
+| `Fn + ↓`        | Decrease volume        |
+| `Fn + Mute`     | Toggle mute            |
+| `Fn + Mic Mute` | Toggle microphone mute |
 
 Volume control uses `wpctl`.
 
 ### Brightness
 
-| Key                     | Action              |
-| ----------------------- | ------------------- |
-| `XF86MonBrightnessDown` | Decrease brightness |
-| `XF86MonBrightnessUp`   | Increase brightness |
+| Key      | Action              |
+| -------- | ------------------- |
+| `Fn + ←` | Decrease brightness |
+| `Fn + →` | Increase brightness |
 
 Brightness control uses `brightnessctl`.
 
-On the target hardware, these keys correspond to:
+On the tested hardware:
 
 ```text
-Fn + LEFT  → brightness down
-Fn + RIGHT → brightness up
+Fn + LEFT  → brightness -
+Fn + RIGHT → brightness +
 ```
 
 Availability depends on the keyboard and hardware.
 
-### Media
+### Multimedia
 
-| Key              | Action         |
-| ---------------- | -------------- |
-| `XF86AudioNext`  | Next track     |
-| `XF86AudioPrev`  | Previous track |
-| `XF86AudioPlay`  | Play / pause   |
-| `XF86AudioPause` | Play / pause   |
+| Key               | Action         |
+| ----------------- | -------------- |
+| `Fn + Next`       | Next track     |
+| `Fn + Previous`   | Previous track |
+| `Fn + Play/Pause` | Play / pause   |
+| `Fn + Pause`      | Play / pause   |
 
 Media controls use `playerctl`.
+
+`Fn + Next` refers to the physical **next-track key**, usually marked with the `⏭` symbol.
+
+`Fn + Previous` refers to the physical **previous-track key**, usually marked with the `⏮` symbol.
+
+`Fn + Play/Pause` refers to the physical **play/pause key**, usually marked with the `▶⏸` symbols.
+
+`Fn + Pause` refers to the physical **pause key**, when the keyboard has a separate key for this function.
 
 ### Splunk
 
@@ -755,7 +769,7 @@ autostart.lua
 
 If your **right speaker is NOT damaged**, you do not need this script.
 
-After installing the dotfiles, **remove or comment out the `left-speaker.sh` execution in `autostart.lua`**.
+After installing the dotfiles, you should **remove or comment out the `left-speaker.sh` execution in `autostart.lua`**.
 
 Otherwise, the script may unnecessarily modify your system's audio configuration.
 
@@ -793,8 +807,8 @@ dotfiles/
 ## 🧠 Philosophy
 
 * Modular and easy-to-maintain installation.
-* Separation between the system, desktop environment, and themes.
-* Reproducible configuration for Arch Linux.
+* Separation between system, desktop environment and themes.
+* Reproducible Arch Linux configuration.
 * Inspired by setups such as Caelestia / unixporn.
 
 ---
@@ -817,18 +831,17 @@ Reboot the system after the installation is complete.
 ## ⚠️ Notes
 
 * This setup is designed for Arch Linux.
-* An active internet connection is required during installation.
+* An internet connection is required during installation.
 * Hardware-specific adjustments may be required.
-* This setup does not include NVIDIA-specific packages or drivers.
-* `left-speaker.sh` is a hardware-specific script for solving a problem related to the right speaker.
+* NVIDIA-specific packages and drivers are not included.
+* `left-speaker.sh` is specific to solving a hardware problem related to the right speaker.
 * If your right speaker works correctly, remove or comment out its execution in `autostart.lua`.
 * `clock-weather.sh` contains a manually configured location and must be changed when using another location.
-* The Plymouth setup modifies components related to `mkinitcpio` and the boot configuration.
-* Review the hardware-specific configurations before using these dotfiles.
+* The Plymouth theme modifies components related to `mkinitcpio` and the boot configuration.
+* Review hardware-specific configurations before using these dotfiles.
 
 ---
 
 ## 🎯 Goal
 
-Have a fully functional Hyprland system running within a few minutes after installing Arch Linux.
-
+Have a fully functional Hyprland system running within a few minutes after installing Arch.
