@@ -26,9 +26,21 @@ fi
 echo "==> Configurando kernel cmdline..."
 
 if [ -f /etc/kernel/cmdline ]; then
-    if ! grep -q "quiet" /etc/kernel/cmdline; then
-        echo "quiet splash loglevel=3" | sudo tee -a /etc/kernel/cmdline
+    CMDLINE="$(cat /etc/kernel/cmdline)"
+
+    if [[ "$CMDLINE" != *"quiet"* ]]; then
+        CMDLINE+=" quiet"
     fi
+
+    if [[ "$CMDLINE" != *"splash"* ]]; then
+        CMDLINE+=" splash"
+    fi
+
+    if [[ "$CMDLINE" != *"loglevel=3"* ]]; then
+        CMDLINE+=" loglevel=3"
+    fi
+
+    echo "$CMDLINE" | sudo tee /etc/kernel/cmdline > /dev/null
 fi
 
 echo "==> Regenerando initramfs..."
