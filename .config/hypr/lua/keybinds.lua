@@ -74,12 +74,14 @@ hl.bind(
         "/opt/splunk/bin/splunk start --accept-license && brave http://localhost:8000"
     )
 )
+
 hl.bind(
     "SUPER + SHIFT + X",
     hl.dsp.exec_cmd(
         "/opt/splunk/bin/splunk stop"
     )
 )
+
 
 -- =========================================
 -- ROFI / LAUNCHERS
@@ -136,14 +138,17 @@ hl.bind(
 -- =========================================
 -- KEYBOARD LAYOUT
 -- =========================================
+
 -- US <-> ES
 -- SUPER + SHIFT + SPACE
+
 hl.bind(
     "SUPER + SHIFT + SPACE",
     hl.dsp.exec_cmd(
         "hyprctl switchxkblayout all next"
     )
 )
+
 
 -- =========================================
 -- WINDOW FOCUS
@@ -176,6 +181,7 @@ hl.bind(
         direction = "down",
     })
 )
+
 
 -- =========================================
 -- MOVE WINDOWS
@@ -213,12 +219,12 @@ hl.bind(
     })
 )
 
+
 -- =========================================
 -- WORKSPACES
 -- =========================================
 
 for i = 1, 10 do
-
     local key = i % 10
 
     -- SUPER + number -> workspace
@@ -236,7 +242,6 @@ for i = 1, 10 do
             workspace = i,
         })
     )
-
 end
 
 
@@ -293,7 +298,7 @@ hl.bind(
 -- =========================================
 -- RESIZE ACTIVE WINDOW
 -- =========================================
--- Resize active window
+
 hl.bind(
     "SUPER + ALT + right",
     hl.dsp.exec_cmd("hyprctl dispatch resizeactive 15 0")
@@ -314,9 +319,12 @@ hl.bind(
     hl.dsp.exec_cmd("hyprctl dispatch resizeactive 0 15")
 )
 
+
 -- =========================================
 -- VOLUME
 -- =========================================
+
+-- Laptop / multimedia keys
 
 hl.bind(
     "XF86AudioRaiseVolume",
@@ -364,10 +372,40 @@ hl.bind(
 
 
 -- =========================================
+-- STANDARD KEYBOARD CONTROLS
+-- =========================================
+
+-- CTRL + ALT + UP    = Volume up
+-- CTRL + ALT + DOWN  = Volume down
+-- CTRL + ALT + M     = Mute
+
+hl.bind(
+    "CTRL + ALT + up",
+    hl.dsp.exec_cmd(
+        "wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+    )
+)
+
+hl.bind(
+    "CTRL + ALT + down",
+    hl.dsp.exec_cmd(
+        "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+    )
+)
+
+hl.bind(
+    "CTRL + ALT + M",
+    hl.dsp.exec_cmd(
+        "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    )
+)
+
+
+-- =========================================
 -- BRIGHTNESS
 -- =========================================
--- Fn + LEFT  = brightness down
--- Fn + RIGHT = brightness up
+
+-- Laptop / multimedia keys
 
 hl.bind(
     "XF86MonBrightnessDown",
@@ -389,6 +427,28 @@ hl.bind(
         locked = true,
         repeating = true,
     }
+)
+
+
+-- =========================================
+-- STANDARD KEYBOARD BRIGHTNESS
+-- =========================================
+
+-- CTRL + ALT + LEFT  = Brightness down
+-- CTRL + ALT + RIGHT = Brightness up
+
+hl.bind(
+    "CTRL + ALT + left",
+    hl.dsp.exec_cmd(
+        "brightnessctl -e4 -n2 set 5%-"
+    )
+)
+
+hl.bind(
+    "CTRL + ALT + right",
+    hl.dsp.exec_cmd(
+        "brightnessctl -e4 -n2 set 5%+"
+    )
 )
 
 
