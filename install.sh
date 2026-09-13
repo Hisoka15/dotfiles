@@ -10,9 +10,4 @@ mkdir -p ~/.config
 
 cp -r "$SCRIPT_DIR/.config/." ~/.config/
 
-if [ -d "$SCRIPT_DIR/walls" ]; then
-    mkdir -p ~/Pictures
-    cp -r "$SCRIPT_DIR/walls" ~/Pictures/
-fi
-
 echo "Dotfiles instalados correctamente."

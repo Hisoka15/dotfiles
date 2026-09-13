@@ -10,6 +10,10 @@ sudo pacman -Syu --noconfirm
 echo "==> Instalando paquetes base"
 "$SCRIPT_DIR/packages.sh"
 
+echo "==> Preparando wallpapers"
+mkdir -p "$HOME/Pictures/walls"
+cp -r "$SCRIPT_DIR/walls/." "$HOME/Pictures/walls/"
+
 echo "==> Instalando yay y Pywal16"
 "$SCRIPT_DIR/yayInstall.sh"
 
